@@ -5,6 +5,7 @@ Router.map(function(){
   // this.resource('posts', function() {
   //   this.route('new');
   // });
+  this.resource('todos', { path: '/' });
 });
 
 export default Router;
