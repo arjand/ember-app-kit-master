@@ -10,9 +10,9 @@ Todo.FIXTURES = [
    isCompleted: true
  },
  {
- 	 id: 4,
- 	 title: 'Create Clover employees app',
- 	 isCompleted: false
+   id: 4,
+   title: 'Create Clover employees app',
+   isCompleted: false
  },
  {
    id: 2,
