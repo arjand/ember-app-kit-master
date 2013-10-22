@@ -14,7 +14,7 @@
 				{{else}}
 					{{input type="checkbox" checked=isCompleted class="toggle" }}
 					<label {{action "editTodo" on="doubleClick"}}>{{title}}</label>
-				<button class="destroy btn"></button>			
+					<button {{action "removeTodo" }} class="destroy close" type="button">&times;</button>			
 				{{/if}}
 			</li>
 		{{/each}}			
@@ -25,7 +25,7 @@
 
 <footer id="footer">
 	<span id="todo-count">
-		<strong>{{remaining}}</strong> left
+		<strong>{{remaining}}</strong> {{inflection}} left
 	</span>
 	<ul id="filters">
 		<li>

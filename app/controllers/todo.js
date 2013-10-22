@@ -2,6 +2,11 @@ var TodoController = Ember.ObjectController.extend({
 	actions: {
 		editTodo: function() {
 			this.set('isEditing', true);
+		},
+		removeTodo: function(){
+			var todo = this.get('model');
+			todo.deleteRecord();
+			todo.save();
 		}
 	},
 	isEditing: false,
@@ -18,6 +23,7 @@ var TodoController = Ember.ObjectController.extend({
 			return value;
 		}
 	}.property('model.isCompleted'),
+
 
 });
 
