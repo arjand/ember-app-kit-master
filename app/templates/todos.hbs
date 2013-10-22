@@ -9,7 +9,8 @@
 		{{#each itemController="todo"}}
 			<li {{bind-attr class="isCompleted:completed isEditing:editing"}}> <!-- when isCompleted is true, adds css class "completed" -->
 				{{#if isEditing}}
-					<input class='edit'>
+					{{edit-todo class="edit" value=title focus-out="acceptChanges"
+						insert-newline="acceptChanges"}}
 				{{else}}
 					{{input type="checkbox" checked=isCompleted class="toggle" }}
 					<label {{action "editTodo" on="doubleClick"}}>{{title}}</label>
