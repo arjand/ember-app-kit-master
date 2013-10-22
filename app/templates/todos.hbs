@@ -1,6 +1,6 @@
 <header id="header">
-	<h1>todos</h1>
-	{{ input type="text" id="new-todo" class="form-control" placeholder="What needs to be done?" value=newTitle action="createTodo" }}
+	<h1>{{t todos.todos}}</h1>
+	{{ input type="text" id="new-todo" class="form-control"  placeholderTranslation="todos.editInstructions" value=newTitle action="createTodo" }}
 
 </header>
 
@@ -8,6 +8,7 @@
 	{{outlet}}
 
 	{{input type="checkbox" id="toggle-all" checked=allAreDone}}
+
 </section>
 
 <footer id="footer">
@@ -16,19 +17,19 @@
 	</span>
 	<ul id="filters">
 		<li>
-			{{#link-to "todos.index" activeClass="selected"}}All{{/link-to}}
+			{{#link-to "todos.index" activeClass="selected"}}{{t todos.all}}{{/link-to}}
 		</li>
 		<li>
-			{{#link-to "todos.active" activeClass="selected"}}Active{{/link-to}}
+			{{#link-to "todos.active" activeClass="selected"}}{{t todos.active}}{{/link-to}}
 		</li>
 		<li>
-			{{#link-to "todos.completed" activeClass="selected"}}Completed{{/link-to}}
+			{{#link-to "todos.completed" activeClass="selected"}}{{t todos.completed}}{{/link-to}}
 		</li>
 	</ul>
 
 	{{#if hasCompleted}}
 		<button id="clear-completed" {{action "clearCompleted"}}>
-			Clear completed ({{completed}})
+			{{t todos.clearCompleted}} ({{completed}})
 		</button>
 	{{/if}}
 </footer>
