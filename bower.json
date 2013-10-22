@@ -5,7 +5,8 @@
     "jquery": "~1.10.2",
     "qunit": "~1.12.0",
     "ember": "1.1.0-beta.2",
-    "ember-data-shim": "1.0.0-beta.3"
+    "ember-data-shim": "1.0.0-beta.3",
+    "ember-localstorage-adapter": "git@github.com:rpflorence/ember-localstorage-adapter.git"
   },
   "resolutions": {
     "ember": "1.1.0-beta.2"
