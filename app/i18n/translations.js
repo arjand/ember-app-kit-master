@@ -2,7 +2,7 @@ var Translations = {
 	'todos': {
 		'todos': 'todos',
 		'editInstructions': 'Double-click to edit a todo',
-		'clearCompleted': 'Clear completed',
+		'clearCompleted': 'Clear completed ({{count}})',
 		'all': 'All',
 		'active': 'Active',
 		'completed': 'Completed'

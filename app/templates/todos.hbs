@@ -29,7 +29,7 @@
 
 	{{#if hasCompleted}}
 		<button id="clear-completed" {{action "clearCompleted"}}>
-			{{t todos.clearCompleted}} ({{completed}})
+			{{t todos.clearCompleted countBinding=completed}} 
 		</button>
 	{{/if}}
 </footer>
