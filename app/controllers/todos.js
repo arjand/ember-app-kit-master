@@ -24,6 +24,9 @@ var TodosController = Ember.ArrayController.extend({
 			completed.invoke('save');
 		}
 	},
+	allAreDone: function(){
+		return !!this.get('length') && this.everyBy('isCompleted', true);
+	}.property('@each.isCompleted'),
 	hasCompleted: function(){
 		return this.get('completed') > 0;
 	}.property('completed'),
@@ -31,7 +34,7 @@ var TodosController = Ember.ArrayController.extend({
 	completed: function(){
 		return this.filterProperty('isCompleted', true).get('length');
 	}.property('@each.isCompleted'),
-	
+
 	remaining: function() {
 		return this.filterBy('isCompleted', false).get('length');
 	}.property('@each.isCompleted'),
