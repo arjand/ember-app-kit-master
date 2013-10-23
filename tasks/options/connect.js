@@ -11,8 +11,9 @@ module.exports = {
       // Use this option to have the catch-all return a different
       // page than index.html on any url not matching an asset.
       //   wildcard: 'not_index.html'
-      middleware: middleware
-    }
+      middleware: middleware      
+    },
+    
   },
   dist: {
     options: {
@@ -21,8 +22,13 @@ module.exports = {
       base: 'dist/',
       middleware: middleware
     }
+  },
+  rules: {
+        '^/manage$': '/manage.html'
   }
 };
+
+var rewriteRulesSnippet = require('grunt-connect-rewrite/lib/utils').rewriteRequest;
 
 // works with tasks/locking.js
 function lock(req, res, next) {
@@ -63,10 +69,12 @@ function buildWildcardMiddleware(options) {
 function middleware(connect, options) {
   var result = [
     lock,
-    connect['static'](options.base),
-    connect.directory(options.base),
+    //connect['static'](options.base),
+    rewriteRulesSnippet,
+    connect['static'](require('path').resolve(options.base)),
+    connect.directory(options.base),    
     // Remove this middleware to disable catch-all routing.
-    buildWildcardMiddleware(options)
+    //buildWildcardMiddleware(options)
   ];
 
   // Add livereload middlware after lock middleware if enabled
@@ -76,3 +84,5 @@ function middleware(connect, options) {
 
   return result;
 }
+
+
