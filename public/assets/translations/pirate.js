@@ -5,7 +5,11 @@ var Translations = {
 		'clearCompleted': 'Send {{count}} completed off the plank',
 		'all': 'All',
 		'active': 'Alive',
-		'completed': 'Dead'
+		'completed': 'Dead',
+		'itemsLeft': {
+			'one': 'item left',
+			'other':'items left'
+		}
 	}
   
 };

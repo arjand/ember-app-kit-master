@@ -5,7 +5,11 @@ var Translations = {
 		'clearCompleted': 'Delete {{count}} completed ',
 		'all': 'All',
 		'active': 'Active',
-		'completed': 'Completed'
+		'completed': 'Completed',
+		'itemsLeft': {
+			'one': 'item left',
+			'other':'items left'
+		}
 	}
   
 };

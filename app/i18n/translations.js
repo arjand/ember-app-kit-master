@@ -17,6 +17,8 @@ supported_languages.forEach(function(element, index, array) {
 	}
 });
 
+CLDR.defaultLanguage = language;
+
 $.ajax({
 	url: "/assets/translations/" + language + ".js"
 });

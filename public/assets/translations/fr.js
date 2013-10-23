@@ -5,7 +5,11 @@ var Translations = {
 		'clearCompleted': 'Send {{count}} completed off the plank(french)',
 		'all': 'All(french)',
 		'active': 'Alive(french)',
-		'completed': 'Dead(french)'
+		'completed': 'Dead(french)',
+		'itemsLeft': {
+			'one': 'item left',
+			'other':'items left'
+		}
 	}
   
 };
