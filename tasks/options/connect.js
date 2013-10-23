@@ -25,10 +25,21 @@ module.exports = {
   },
   rules: {
         '^/manage$': '/manage.html'
-  }
+  },
+  proxies: [
+    {
+        context: '/cos',
+        host: '0.0.0.0',
+        port: 8010,
+        https: false,
+        changeOrigin: false,
+        xforward: false
+    }
+  ]
 };
 
 var rewriteRulesSnippet = require('grunt-connect-rewrite/lib/utils').rewriteRequest;
+var proxySnippet = require('grunt-connect-proxy/lib/utils').proxyRequest;
 
 // works with tasks/locking.js
 function lock(req, res, next) {
@@ -70,6 +81,7 @@ function middleware(connect, options) {
   var result = [
     lock,
     //connect['static'](options.base),
+    proxySnippet,
     rewriteRulesSnippet,
     connect['static'](require('path').resolve(options.base)),
     connect.directory(options.base),    
